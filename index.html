@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Recipe Website</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial;}
+    body{background:#fff;color:#333;}
+
+    /* HEADER */
+    header{width:100%;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;background:#ffffffd9;backdrop-filter:blur(10px);z-index:10;box-shadow:0 2px 10px #0001;}
+    .logo{font-size:28px;font-weight:700;color:#ff5722;}
+    nav ul{list-style:none;display:flex;gap:30px;}
+    nav a{text-decoration:none;color:#444;font-size:16px;font-weight:500;transition:.3s;}
+    nav a:hover{color:#ff5722;}
+
+    .hamburger{display:none;font-size:30px;cursor:pointer;}
+    .mobile-menu{display:none;flex-direction:column;background:#fff;box-shadow:0 5px 20px #0002;padding:20px;position:absolute;top:80px;right:20px;border-radius:10px;}
+    .mobile-menu a{margin:10px 0;font-size:18px;color:#444;text-decoration:none;}
+
+    /* HERO */
+    .hero{padding:140px 20px 80px;background:url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg') center/cover no-repeat;color:#fff;text-align:center;}
+    .hero h1{font-size:56px;font-weight:700;margin-bottom:10px;text-shadow:0 3px 10px #0006;}
+    .hero p{font-size:20px;text-shadow:0 2px 8px #0006;}
+
+    /* FEATURES */
+    .features{padding:60px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1200px;margin:auto;}
+    .feature-box{background:#fff;border-radius:15px;padding:25px;text-align:center;box-shadow:0 5px 20px #0001;font-size:18px;font-weight:600;}
+
+    /* FOOD CARDS */
+    .cards{padding:60px 20px;max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+    .card{background:#fff;border-radius:15px;box-shadow:0 6px 20px #0002;overflow:hidden;transition:.3s;cursor:pointer;}
+    .card:hover{transform:translateY(-6px);}
+    .card img{width:100%;height:220px;object-fit:cover;}
+    .card h3{padding:15px;font-size:20px;font-weight:700;}
+
+    /* BEST */
+    .best{text-align:center;padding:70px 20px;background:#fff7f2;}
+    .best h2{font-size:40px;margin-bottom:10px;color:#ff5722;}
+
+    /* TESTIMONIAL */
+    .testimonial{padding:70px 20px;background:#fff;}
+    .testimonial-box{background:#fff;border-radius:15px;padding:40px;max-width:800px;margin:auto;box-shadow:0 5px 20px #0001;font-size:20px;color:#444;}
+
+    /* NEWSLETTER */
+    .newsletter{text-align:center;padding:60px 20px;background:#fafafa;}
+    .newsletter input{padding:14px 20px;width:280px;border-radius:8px;border:1px solid #ccc;font-size:16px;}
+    .newsletter button{padding:14px 20px;background:#ff5722;color:#fff;border:none;border-radius:8px;font-size:16px;margin-left:10px;cursor:pointer;transition:.3s;}
+    .newsletter button:hover{background:#e14a1e;}
+
+    /* FOOTER */
+    footer{text-align:center;padding:25px;background:#222;color:#fff;font-size:16px;}
+
+    /* MOBILE */
+    @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:600px){
+      nav ul{display:none;}
+      .hamburger{display:block;}
+      .cards{grid-template-columns:1fr;}
+      .hero h1{font-size:40px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Foodie</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Recipes</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#">Recipes</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+
+<section class="hero">
+  <h1>Discover Amazing Food Recipes</h1>
+  <p>Healthy, tasty & easy-to-cook dishes for everyone</p>
+</section>
+
+<section class="features">
+  <div class="feature-box">🍳 Easy to Cook</div>
+  <div class="feature-box">🥦 Healthy Ingredients</div>
+  <div class="feature-box">📘 Step-by-Step Guide</div>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg" />
+    <h3>Grilled Chicken</h3>
+  </div>
+  <div class="card">
+    <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" />
+    <h3>Veg Salad</h3>
+  </div>
+  <div class="card">
+    <img src="https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg" />
+    <h3>Italian Pizza</h3>
+  </div>
+</section>
+
+<section class="best">
+  <h2>Best Rated Recipe</h2>
+  <p>Chosen by thousands of food lovers</p>
+</section>
+
+<section class="testimonial">
+  <div class="testimonial-box">“Amazing website! Learned many recipes easily.” – User</div>
+</section>
+
+<section class="newsletter">
+  <h2>Join Our Newsletter</h2>
+  <input type="email" placeholder="Enter email" />
+  <button>Subscribe</button>
+</section>
+
+<footer>© 2025 Foodie. All Rights Reserved.</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById("mobileMenu");
+  m.style.display=m.style.display==="flex"?"none":"flex";
+}
+</script>
+
+</body>
+</html>
